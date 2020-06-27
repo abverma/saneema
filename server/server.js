@@ -6,6 +6,7 @@ const path = require('path')
 const dbManager = require('./db')
 const Movies = require('./models/movies')
 const publicDir = path.join(__dirname + '/public')
+const clientDir = path.join(__dirname + '/../client/dist')
 const app = express()
 
 const request = (movie) => {
@@ -19,10 +20,10 @@ const request = (movie) => {
 	return axios.get(url)
 }
 
-app.use(express.static(publicDir))
+app.use(express.static(clientDir))
 
 app.get('/', (req, res) => {
-	res.sendFile(path.join(publicDir, '/index.html'))
+	res.sendFile(path.join(clientDir, '/index.html'))
 })
 app.get('/add', (req, res) => {
 	const {imdbID} = req.query
