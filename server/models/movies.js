@@ -64,7 +64,10 @@ exports.findInsertSearched = (movies) => {
 	})
 }
 
-exports.find = () => {
+exports.find = (params) => {
+
+	const {start, limit} = params
+
 	return db.collection('movies').find({
 		user_id: ObjectID("5eef43a67e31d85a0242eff7")
 	}, {
@@ -76,7 +79,8 @@ exports.find = () => {
 			Poster: 1,
 			Type: 1
 		},
-		limit: 25,
+		limit: parseInt(limit) || 25,
+		skip: parseInt(start) || 0,
 		sort: [['_id', 'descending']]
 	}).toArray()
 }

@@ -15,8 +15,6 @@ if (DB_HOST == 'localhost' || DB_HOST == '0.0.0.0') {
 	uri = `mongodb://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?retryWrites=true&w=majority&connectTimeoutMS=300000`
 }
 
-console.log(uri)
-
 const client = new MongoClient(uri, { 
 	useUnifiedTopology: true,
 	loggerLevel: LOG_LEVEL,

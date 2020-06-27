@@ -13,6 +13,15 @@ body {
 	color: #fff;
 }
 
+input[type="text"], button {
+	border-radius: 3px;
+	border: none;
+}
+
+button {
+	cursor: pointer;
+}
+
 .content {
 	display: flex;
 	flex-direction: row;
@@ -31,6 +40,30 @@ body {
 
 .listForm > button {
 	float: right;
+}
+
+.actionForm {
+	padding: 5px;
+	margin: 5px;
+}
+
+.actionForm li {
+	float: right;
+	display: inline-block;
+	margin: 0 5px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	color: teal;
 }
 
 .left, .right {

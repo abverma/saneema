@@ -61,7 +61,7 @@ app.get('/search', (req, res) => {
 	})
 })
 app.get('/movies', (req, res) => {
-	Promise.all([Movies.find(), Movies.count()])
+	Promise.all([Movies.find(req.query), Movies.count()])
 	.then((result) => {
 		res.send({
 			success: true,
